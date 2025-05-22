@@ -1,0 +1,42 @@
+---
+import hanumanImg from "../../../public/images/hanuman_chalisa.jpg";
+import bajrangBanImg from "../../../public/images/bajrang_ban.jpg";
+export interface Props {
+  title: string;
+  img: string;
+  verses: string;
+}
+const { title, img, verses } = Astro.props;
+debugger;
+---
+
+<article class="bg-orange-50 text-orange-600 max-h-screen p-4 md:p-8 overflow-y-auto">
+  <!-- Hero Image -->
+  {
+    img && (
+      <div class="w-full max-w-3xl mx-auto">
+        <img
+          src={
+            title === "हनुमान चालीसा"
+              ? "../../../public/images/hanuman_chalisa.jpg"
+              : title === "संकटमोचन हनुमानाष्टक"
+                ? "../../../public/images/hanuman_ashtak.jpeg"
+                : "../../../public/images/bajrang_ban.jpg"
+          }
+          alt={`${title} Hero`}
+          class="w-full h-auto rounded-lg shadow-lg object-cover"
+        />
+      </div>
+    )
+  }
+
+  <!-- Title -->
+  <h2 class="mt-6 text-xl md:text-4xl font-bold text-center">{title}</h2>
+
+  <!-- Verses -->
+  <div
+    class="mt-4 max-w-3xl text-center mx-auto text-[14px] md:text-lg leading-relaxed whitespace-pre-line"
+  >
+    {verses}
+  </div>
+</article>
