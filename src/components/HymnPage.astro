@@ -10,15 +10,16 @@ const { title, img, verses } = Astro.props;
 debugger;
 ---
 
-<article class="bg-orange-50 text-orange-600 max-h-screen p-4 md:p-8 overflow-y-auto">
+<article
+  class="bg-orange-50 text-orange-600 max-h-screen p-4 md:p-8 overflow-y-auto"
+>
   <!-- Hero Image -->
   {
     img && (
       <div class="w-full max-w-3xl mx-auto">
         <img
-          src={
-            img
-          }
+          loading="eager"
+          src={img}
           alt={`${title} Hero`}
           class="w-full h-auto rounded-lg shadow-lg object-cover"
         />
